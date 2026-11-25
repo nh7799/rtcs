@@ -1,0 +1,50 @@
+{
+  "name": "rtcs-virtual-initio-lab",
+  "version": "1.5.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "setup:compiler": "bash scripts/setup-compiler.sh",
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --import tsx --test tests/unit.test.mjs",
+    "test:integration": "playwright test",
+    "samples:build": "node server/build-samples.mjs",
+    "setup:pi": "bash scripts/setup-pi.sh",
+    "setup:pi-os": "node scripts/setup-pi-os.mjs",
+    "lab:ssh-config": "node scripts/lab-ssh-config.mjs",
+    "compile:pi": "node scripts/compile-pi.mjs",
+    "app": "vite build && electron ."
+  },
+  "dependencies": {
+    "@codemirror/lang-cpp": "^6.0.3",
+    "@codemirror/lint": "^6.8.5",
+    "@fontsource-variable/dm-sans": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@xterm/addon-fit": "^0.11.0",
+    "@xterm/xterm": "^6.0.0",
+    "codemirror": "^6.0.1",
+    "diff": "^8.0.2",
+    "fflate": "^0.8.2",
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "ws": "^8.23.0",
+    "yauzl": "^3.2.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.4.1",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.2",
+    "vite": "^6.3.0",
+    "electron": "^38.0.0"
+  },
+  "main": "electron/main.mjs"
+}

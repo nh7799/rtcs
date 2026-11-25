@@ -1,0 +1,12 @@
+#!/bin/bash
+# Finds the project folder (the .app sits inside it), then opens the native lab window.
+here="$(cd "$(dirname "$0")/../../.." && pwd)"
+state="$HOME/.rtcs-lab-path"
+if [ -f "$here/package.json" ]; then project="$here"; echo "$here" > "$state"; else project="$(cat "$state" 2>/dev/null)"; fi
+if [ -z "$project" ] || [ ! -f "$project/package.json" ]; then
+  osascript -e 'display alert "RTCS Lab" message "Keep RTCS Lab.app inside the RTCS_CW1_Virtual_Initio_Lab folder (open it from there once)."'; exit 1
+fi
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+cd "$project"
+if [ ! -d node_modules ]; then open -a Terminal "$project/Start Lab.command"; exit 0; fi
+exec npm run app >> "$HOME/.rtcs-lab.log" 2>&1

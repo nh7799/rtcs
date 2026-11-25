@@ -1,0 +1,16 @@
+[connection]
+id=Lab Ethernet
+uuid=856959bb-b24f-49b7-8b65-a113fdbe05a4
+type=ethernet
+autoconnect=true
+autoconnect-priority=100
+
+[ethernet]
+mac-address=52:54:00:12:34:56
+
+[ipv4]
+method=manual
+address1=10.0.1.2/24
+
+[ipv6]
+method=disabled

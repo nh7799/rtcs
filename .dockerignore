@@ -1,0 +1,9 @@
+**
+!shim/
+!shim/**
+!pi-runtime/
+!pi-runtime/Dockerfile
+!pi-runtime/Makefile
+!pi-runtime/build.sh
+!pi-runtime/run.sh
+!pi-runtime/native.c

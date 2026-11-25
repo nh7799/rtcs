@@ -1,0 +1,9 @@
+node_modules/
+dist/
+playwright-report/
+test-results/
+
+.env.local
+public/RTCS_CW1_Virtual_Initio_Lab.zip
+.initio-toolchain/
+.initio-pi-os/

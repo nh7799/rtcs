@@ -1,0 +1,14 @@
+[Unit]
+Description=Run the controller scheduled with rtcs
+After=initio-bridge.service
+Requires=initio-bridge.service
+
+[Service]
+Type=exec
+User=e300user
+ExecStart=/usr/local/bin/rtcs boot
+WorkingDirectory=/home/e300user
+Environment=TERM=xterm-256color
+
+[Install]
+WantedBy=multi-user.target
